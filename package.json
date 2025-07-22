@@ -1,0 +1,28 @@
+{
+  "name": "formulaire",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/farba09/etudiant#readme",
+  "bugs": {
+    "url": "https://github.com/farba09/etudiant/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farba09/etudiant.git"
+  },
+  "license": "ISC",
+  "author": "pisco",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/main/resources/static/default.css -o ./src/main/resources/static/style.css --watch",
+    "build": "tailwindcss -i ./src/main/resources/static/default.css -o ./src/main/resources/static/style.css --minify"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10"
+  }
+}

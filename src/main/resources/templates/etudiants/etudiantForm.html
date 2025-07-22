@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Formulaire Étudiant</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
+<div class="w-full min-h-screen bg-neutral-900 flex items-center justify-center">
+    <div class="flex flex-col max-w-3xl mx-auto p-6 bg-neutral-800 rounded-lg shadow-lg mt-10">
+        <h1 class="text-3xl font-bold text-indigo-600 mb-6">Ajouter un étudiant</h1>
 
+        <form th:action="@{/etudiant/add}" method="post" th:object="${etudiant}" class="w-full flex flex-col gap-y-6">
+            <input th:field="*{id}" type="hidden">
+
+
+            <div class="grid grid-cols-1 gap-2">
+                <label for="nom" class="block text-sm font-medium text-gray-500">Nom</label>
+                <input id="nom" th:field="*{nom}" type="text"
+                       class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border text-white">
+            </div>
+
+
+            <div class="grid grid-cols-1 gap-2">
+                <label for="prenom" class="block text-sm font-medium text-gray-500">Prénom</label>
+                <input id="prenom" th:field="*{prenom}" type="text"
+                       class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border text-white">
+            </div>
+
+
+            <div class="grid grid-cols-1 gap-2">
+                <label for="email" class="block text-sm font-medium text-gray-500">Email</label>
+                <input id="email" th:field="*{email}" type="email"
+                       class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border text-white">
+            </div>
+
+
+            <div class="grid grid-cols-1 gap-2">
+                <label for="age" class="block text-sm font-medium text-gray-500">Âge</label>
+                <input id="age" th:field="*{age}" type="number" min="16" max="99"
+                       class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border font-mono text-white">
+            </div>
+
+
+            <button type="submit"
+                    class="w-full bg-indigo-600 text-white text-lg font-medium py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-150">
+                Ajouter un étudiant
+            </button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
